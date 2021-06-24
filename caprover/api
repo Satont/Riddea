@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dockerfileLines": [
       "FROM node:16.2.0-alpine3.11",
-      "RUN mkdir -p /usr/src/app",
-      "RUN ls -la",
-      "COPY ../apps/api /usr/src/app",
+      "COPY . /app",
+      "WORKDIR /app",
+      "RUN cd apps/api"
       "RUN yarn",
       "RUN yarn build",
       "CMD [ \"yarn\", \"start\" ]"
