@@ -3,8 +3,8 @@
   "dockerfileLines": [
       "FROM node:16.2.0-alpine3.11",
       "RUN mkdir -p /usr/src/app",
-      "COPY ./apps/api /usr/src/app",
-      "WORKDIR /usr/src/app",
+      "COPY . /usr/src/app",
+      "WORKDIR /usr/src/app/apps/api",
       "RUN yarn && yarn build",
       "CMD [ \"yarn\", \"start\" ]"
   ]
